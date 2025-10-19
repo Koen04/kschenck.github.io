@@ -23,22 +23,18 @@ body {
 
 /* ---------- Header ---------- */
 header {
+  background-image: url('../images/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  margin-bottom: 30px;
-}
-
-.profile-pic {
-  width: 130px;
-  height: 130px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 10px;
-}
-
-h1 {
-  margin: 10px 0;
-  font-size: 2em;
-  font-weight: 600;
+  color: white;
 }
 
 /* ---------- Navigation bar ---------- */
