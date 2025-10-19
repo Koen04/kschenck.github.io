@@ -11,6 +11,7 @@ body {
   padding: 0;
 }
 
+
 /* ---------- Main container ---------- */
 .container {
   max-width: 800px;
@@ -20,6 +21,15 @@ body {
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
+.profile-pic {
+  width: 300px;        /* adjust as you like (250–350px looks good) */
+  height: auto;        /* keeps the correct proportions */
+  display: block;
+  margin: 40px auto 10px auto; /* centers the photo with spacing */
+  border: none;        /* remove any border */
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.2); /* subtle shadow, optional */
+}
+
 
 /* ---------- Header ---------- */
 header {
