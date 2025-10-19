@@ -61,6 +61,63 @@ body {
   line-height: 1.6;
   color: #222;
 }
+/* === OUTSIDE OF ACADEMICS SECTION === */
+#outside {
+  padding: 60px 10%;
+  background-color: #ffffff;
+  border-top: 1px solid #ddd;
+}
+
+.extra-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.extra-container h2 {
+  font-size: 2em;
+  margin-bottom: 30px;
+  color: #111;
+}
+
+.extra-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.extra-photos {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.extra-photo {
+  width: 45%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.extra-text {
+  max-width: 700px;
+  font-size: 1.1em;
+  line-height: 1.7;
+  color: #333;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .extra-photos {
+    flex-direction: column;
+  }
+  .extra-photo {
+    width: 80%;
+  }
+}
 
 /* ---------- Header ---------- */
 header {
