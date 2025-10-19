@@ -29,54 +29,53 @@ body {
   border: none;        /* remove any border */
   box-shadow: 0px 0px 10px rgba(0,0,0,0.2); /* subtle shadow, optional */
 }
-/* === HEADER WITH BACKGROUND IMAGE === */
+/* === LIGHT HEADER WITH ORIGINAL BACKGROUND === */
 header {
-  background-image: url('../images/background.jpg'); /* <-- make sure this path is correct */
+  background-image: url('../images/background.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  color: white;
+  color: black; /* text color */
   text-align: center;
   padding: 100px 20px 40px 20px;
   position: relative;
 }
 
+/* Remove dark overlay entirely */
 header::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0, 0, 0, 0.4); /* dark overlay for text readability */
-  z-index: 0;
-}
-
-header h1,
-header p,
-header nav {
-  position: relative;
-  z-index: 1;
+  content: none;
 }
 
 header h1 {
   font-size: 3em;
   margin-bottom: 10px;
+  color: black;
 }
 
 header p {
   font-size: 1.2em;
   margin-bottom: 30px;
+  color: black;
+}
+
+nav {
+  background-color: transparent;
+  text-align: center;
+  padding: 15px 0;
 }
 
 nav a {
   margin: 0 15px;
   text-decoration: none;
-  color: #fff;
+  color: black;
   font-weight: 500;
   transition: color 0.2s;
 }
 
 nav a:hover {
-  color: #00aaff;
+  color: #0074d9;
 }
+
 
 
 /* === ABOUT SECTION === */
