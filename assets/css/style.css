@@ -21,7 +21,7 @@ body {
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 .profile-pic {
-  width: 300px;        /* adjust as you like (250–350px looks good) */
+  width: 350px;        /* adjust as you like (250–350px looks good) */
   height: auto;        /* keeps the correct proportions */
   display: block;
   margin: 40px auto 10px auto; /* centers the photo with spacing */
