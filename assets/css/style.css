@@ -75,6 +75,55 @@ nav a:hover {
   color: #0074d9;
 }
 
+/* --- Research Section --- */
+#research.white-section {
+  background-color: #fff;
+  color: #000;
+  padding: 60px 10%;
+}
+
+#research h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2em;
+}
+
+.research-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 60px;
+  gap: 40px;
+}
+
+.research-item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.research-image {
+  width: 40%;
+  max-width: 400px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.research-image:hover {
+  transform: scale(1.03);
+}
+
+.research-text {
+  flex: 1;
+}
+
+.research-text h3 {
+  margin-top: 0;
+  font-size: 1.4em;
+}
+
+.research-text p {
+  line-height: 1.6;
+  font-size: 1em;
+}
 
 
 /* === ABOUT SECTION === */
