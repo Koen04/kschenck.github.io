@@ -206,15 +206,7 @@ nav a:hover {
   text-align: left;
 }
 
-@media (max-width: 768px) {
- .extra-photo {
-  width: 45%;
-  max-width: 400px;
-  aspect-ratio: 3 / 4;          /* keeps vertical balance */
-  object-fit: cover;            /* crops instead of stretching */
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
+@media (max-width: 768px) { .extra-photos { flex-direction: column; } .extra-photo { width: 80%; } }
 
 /* === Shared Section Style for Research, Contact, and Extras === */
 .white-section {
