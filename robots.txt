@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://koenschenck.github.io/sitemap.xml
