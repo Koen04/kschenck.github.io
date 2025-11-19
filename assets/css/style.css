@@ -1,4 +1,56 @@
 /* ---------- General layout ---------- */
+/* Make layout responsive */
+body {
+    margin: 0;
+    padding: 0 1rem; /* keep some padding on mobile */
+}
+
+/* Scale text properly on smaller screens */
+h1, h2, h3, p {
+    max-width: 100%;
+    word-wrap: break-word;
+}
+
+/* Images scale instead of overflowing */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Responsive layout adjustments */
+.container {
+    width: 100%;
+    max-width: 900px; /* keeps desktop clean */
+    margin: 0 auto;
+}
+
+/* Remove fixed widths on sections */
+section, div {
+    max-width: 100%;
+}
+
+/* Improve spacing on phones */
+@media (max-width: 600px) {
+    body {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    nav a {
+        padding: 0.5rem 0;
+        display: block;
+    }
+}
+<div class="container">
+  <!-- all your sections go here -->
+</div>
+
 body {
   background-size: cover;
   background-position: center;
