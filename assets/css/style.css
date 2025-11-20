@@ -1,346 +1,251 @@
-/* ---------- General layout ---------- */
-/* Make layout responsive */
+/* =========================================================
+   GLOBAL BASE STYLES
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
-    padding: 0 1rem; /* keep some padding on mobile */
+    padding: 0;
+    font-family: -apple-system, Helvetica, Arial, sans-serif;
+    background-color: #ffffff;
+    color: #000;
+    line-height: 1.6;
 }
 
-/* Scale text properly on smaller screens */
-h1, h2, h3, p {
-    max-width: 100%;
-    word-wrap: break-word;
+/* Containers */
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
 }
 
-/* Images scale instead of overflowing */
+/* Images scale properly */
 img {
     max-width: 100%;
     height: auto;
     display: block;
 }
 
-/* Responsive layout adjustments */
-.container {
-    width: 100%;
-    max-width: 900px; /* keeps desktop clean */
-    margin: 0 auto;
+/* Headings */
+h1, h2, h3 {
+    word-wrap: break-word;
+    margin-top: 0;
 }
 
-/* Remove fixed widths on sections */
-section, div {
-    max-width: 100%;
-}
+/* =========================================================
+   HEADER (with mobile-safe background)
+   ========================================================= */
 
-/* Improve spacing on phones */
-@media (max-width: 600px) {
-    body {
-        font-size: 16px;
-        line-height: 1.5;
-    }
-
-    nav ul {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-
-    nav a {
-        padding: 0.5rem 0;
-        display: block;
-    }
-}
-<div class="container">
-  <!-- all your sections go here -->
-</div>
-
-body {
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  color: black;
-  font-family: -apple-system, Helvetica, Arial, sans-serif;
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
-}
-
-
-/* ---------- Main container ---------- */
-.container {
-  max-width: 800px;
-  margin: 40px auto;
-  background: rgba(255, 255, 255, 0.8); /* Semi-transparent white */
-  padding: 40px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-.profile-pic {
-  width: 350px;        /* adjust as you like (250–350px looks good) */
-  height: auto;        /* keeps the correct proportions */
-  display: block;
-  margin: 40px auto 10px auto; /* centers the photo with spacing */
-  border: none;        /* remove any border */
-  box-shadow: 0px 0px 10px rgba(0,0,0,0.2); /* subtle shadow, optional */
-}
-/* === LIGHT HEADER WITH ORIGINAL BACKGROUND === */
 header {
-  background-image: url('../images/background.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: black; /* text color */
-  text-align: center;
-  padding: 100px 20px 40px 20px;
-  position: relative;
+    width: 100%;
+    height: 100vh;
+
+    /* Desktop parallax */
+    background: url('../images/background.jpg') no-repeat center center / cover;
+    background-attachment: scroll; /* changed from fixed */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    color: black;
+    padding: 40px 20px;
 }
 
-/* Remove dark overlay entirely */
+/* iPhone fix: Safari doesn't allow background-attachment: fixed */
+/* Simulate parallax with a pseudo element */
 header::before {
-  content: none;
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url('../images/background.jpg') no-repeat center center / cover;
+    z-index: -1;
+    opacity: 0.9;
 }
 
+/* Header text */
 header h1 {
-  font-size: 3em;
-  margin-bottom: 10px;
-  color: black;
+    font-size: 3em;
+    margin-bottom: 10px;
 }
 
 header p {
-  font-size: 1.2em;
-  margin-bottom: 30px;
-  color: black;
+    font-size: 1.2em;
+    margin-bottom: 30px;
 }
 
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
 nav {
-  background-color: transparent;
-  text-align: center;
-  padding: 15px 0;
+    text-align: center;
+    margin-bottom: 40px;
 }
 
 nav a {
-  margin: 0 15px;
-  text-decoration: none;
-  color: black;
-  font-weight: 500;
-  transition: color 0.2s;
+    margin: 0 15px;
+    text-decoration: none;
+    color: #0066cc;
+    font-weight: 500;
 }
 
 nav a:hover {
-  color: #0074d9;
+    text-decoration: underline;
 }
 
-/* --- Research Section --- */
+/* =========================================================
+   RESEARCH SECTION
+   ========================================================= */
+
 #research.white-section {
-  background-color: #fff;
-  color: #000;
-  padding: 60px 10%;
+    padding: 60px 5%;
+    background-color: white;
+    border-radius: 12px;
 }
 
 #research h2 {
-  text-align: center;
-  margin-bottom: 40px;
-  font-size: 2em;
+    text-align: center;
+    margin-bottom: 40px;
 }
 
+/* Desktop layout */
 .research-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 60px;
-  gap: 40px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 60px;
 }
 
 .research-item:nth-child(even) {
-  flex-direction: row-reverse;
-}
-
-.research-image {
-  width: 40%;
-  max-width: 400px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-}
-
-.research-image:hover {
-  transform: scale(1.03);
+    flex-direction: row-reverse;
 }
 
 .research-text {
-  flex: 1;
+    flex: 1;
+    min-width: 280px;
 }
 
-.research-text h3 {
-  margin-top: 0;
-  font-size: 1.4em;
+.research-image {
+    width: 40%;
+    max-width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
 }
 
-.research-text p {
-  line-height: 1.6;
-  font-size: 1em;
+.research-image:hover {
+    transform: scale(1.03);
 }
 
+/* =========================================================
+   ABOUT SECTION
+   ========================================================= */
 
-/* === ABOUT SECTION === */
 #about {
-  padding: 60px 10%;
-  background-color: #ffffff;
+    padding: 60px 10%;
 }
 
 .about-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 1000px;
-  margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
 }
 
 .about-photo {
-  width: 260px;
-  height: auto;
-  margin: 20px;
-  border-radius: 4px; /* slight rounding, not circular */
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    width: 260px;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .about-text {
-  flex: 1;
-  min-width: 300px;
-  margin: 20px;
-  font-size: 1.1em;
-  line-height: 1.6;
-  color: #222;
+    flex: 1;
+    min-width: 280px;
+    font-size: 1.1em;
 }
-/* === OUTSIDE OF ACADEMICS SECTION === */
+
+/* =========================================================
+   OUTSIDE ACADEMICS SECTION
+   ========================================================= */
+
 #outside {
-  padding: 60px 10%;
-  background-color: #ffffff;
-  border-top: 1px solid #ddd;
+    padding: 60px 10%;
 }
 
 .extra-container {
-  max-width: 1000px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.extra-container h2 {
-  font-size: 2em;
-  margin-bottom: 30px;
-  color: #111;
-}
-
-.extra-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
+    text-align: center;
 }
 
 .extra-photos {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .extra-photo {
-  width: 45%;
-  max-width: 400px;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 45%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .extra-text {
-  max-width: 700px;
-  font-size: 1.1em;
-  line-height: 1.7;
-  color: #333;
-  text-align: left;
+    max-width: 700px;
+    text-align: left;
+    margin: auto;
 }
 
-@media (max-width: 768px) { .extra-photos { flex-direction: column; } .extra-photo { width: 80%; } }
+/* =========================================================
+   FOOTER
+   ========================================================= */
 
-/* === Shared Section Style for Research, Contact, and Extras === */
-.white-section {
-  background-color: white;
-  padding: 60px 20px;
-  margin: 40px 0;
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-}
-
-.white-section h2 {
-  text-align: center;
-  margin-bottom: 25px;
-}
-
-.white-section p, 
-.white-section ul, 
-.white-section li {
-  color: #222;
-  max-width: 900px;
-  margin: 0 auto;
-  line-height: 1.6;
-}
-
-/* ---------- Header ---------- */
-header {
-  background-image: url('../images/background.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  color: white;
-}
-
-/* ---------- Navigation bar ---------- */
-nav {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-nav a {
-  margin: 0 15px;
-  text-decoration: none;
-  color: #0066cc;
-  font-weight: 500;
-}
-
-nav a:hover {
-  text-decoration: underline;
-}
-
-/* ---------- Sections ---------- */
-section {
-  margin-bottom: 30px;
-}
-
-h2 {
-  border-bottom: 2px solid #e5e5e5;
-  padding-bottom: 5px;
-  margin-bottom: 10px;
-  font-size: 1.4em;
-}
-
-ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-ul li {
-  margin-bottom: 10px;
-}
-
-/* ---------- Footer ---------- */
 footer {
-  text-align: center;
-  font-size: 0.9em;
-  color: #777;
-  margin-top: 40px;
+    text-align: center;
+    font-size: 0.9em;
+    color: #777;
+    margin: 40px 0;
+}
+
+/* =========================================================
+   MOBILE RESPONSIVE BREAKPOINTS
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    /* Research: stack vertically */
+    .research-item {
+        flex-direction: column !important;
+        text-align: left;
+        gap: 20px;
+    }
+
+    .research-image {
+        width: 100% !important;
+        max-width: 100%;
+    }
+
+    header h1 {
+        font-size: 2.2em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    nav a {
+        padding: 7px 0;
+        display: inline-block;
+    }
+
+    .extra-photo {
+        width: 80%;
+    }
 }
